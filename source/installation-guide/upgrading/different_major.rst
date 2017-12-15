@@ -169,7 +169,7 @@ Upgrade Elasticsearch
   .. code-block:: console
     # cp /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.bak
 
-  Once time you have finished install Elasticsearch, you can restore it as follow:
+  Once you have finished install Elasticsearch, you can restore it as follow:
 
   .. code-block:: console
     
