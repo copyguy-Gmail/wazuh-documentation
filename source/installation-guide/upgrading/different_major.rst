@@ -163,6 +163,28 @@ Prepare Elastic Stack
 Upgrade Elasticsearch
 ---------------------
 
+.. note::
+  If you have modified the file **/etc/elasticsearch/elasticsearch.yml** or **/etc/elasticsearch/jvm.options** you need to backup them **before** upgrade Elasticsearch.
+
+  .. code-block:: console
+    # cp /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.bak
+
+  Once time you have finished install Elasticsearch, you can restore it as follow:
+
+  .. code-block:: console
+    
+    # cp /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.baknew
+    # cp /etc/elasticsearch/elasticsearch.yml.bak /etc/elasticsearch/elasticsearch.yml
+
+  If your old configuration doesn't work as expected with the new Elasticsearch, you can restore the official configuration as follow:
+
+  .. code-block:: console
+  
+    # cp /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.bak
+    # cp /etc/elasticsearch/elasticsearch.yml.baknew /etc/elasticsearch/elasticsearch.yml
+
+  This method allows you to always preserve both configurations and make you able to try and experiment. We **recommend** to use the official configuration files.
+
 1. Update Elasticsearch:
 
   a) For CentOS/RHEL/Fedora:
@@ -177,7 +199,6 @@ Upgrade Elasticsearch
 
       # apt-get update
       # apt-get install elasticsearch
-
 
 2. Start Elasticsearch:
 
